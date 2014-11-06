@@ -1,0 +1,30 @@
+
+
+
+<div class="Container">
+    <h2>Elastic App</h2>
+    <div ng-controller="MainCtrl">
+       <b>Search Field:</b>
+        <div>
+            Term: <input name="temp" class="form-control" type="text" id="term" ng-model="term">
+
+        </div>
+        <div >
+        <br>
+        <b>{{term}}</b>
+        <div>
+        <div>
+            <br>
+        <button  class="btn btn-warning btn-lg dropdown-toggle" ng-click="search(term)"> Press this button to see stuff </button>
+
+        </div>
+
+        <div class="row-fluid">
+                <div class="span4">
+                    <li ng-repeat="doc in results">
+                        {{ doc._source.title }}
+                    </li>
+                </div>
+        </div>
+    </div>
+</div>
