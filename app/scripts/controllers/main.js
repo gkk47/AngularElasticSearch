@@ -27,13 +27,26 @@ client.ping({
 });
 $scope.search = function(term){
 client.search({
-  index: 'movie_db',
-  type: 'movie',
+  index: 'userss',
+  type: 'users',
   body: {
     query: {
-      match: {
-        _all: term
-      }
+        match: {
+        firstName: term
+    }
+     /*  bool: {
+            must: {
+                match: {
+                    firstName.autocomplete: term
+                }
+            },
+            should: {
+                match: {
+                    firstName: term
+                }
+            }
+        }*/
+
     }
   }
 }).then(function (resp) {
